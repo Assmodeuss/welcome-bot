@@ -69,4 +69,4 @@ async def on_member_join(member):
     else:
         await main_embed.reply(f"{view.value} welcomes {member.mention}")
 
-bot.run('OTY4Mzg0MDM0MDA0NjY4NDU2.GTtgKf.EzIHNBMSMqs5nYMTedBI2vEVj_2k7kIkTJSmck')
+bot.run(os.environ.get('TOKEN')) 
