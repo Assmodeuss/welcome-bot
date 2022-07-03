@@ -34,7 +34,7 @@ bot = Bot()
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send("**Pong!** Latency: {round(bot.latency * 1000)}ms")
+    await ctx.send(f"**Pong!** Latency: {round(bot.latency * 1000)}ms")
 
 @bot.event
 async def on_member_join(member):
