@@ -35,7 +35,6 @@ bot = Bot()
 @bot.command()
 async def ping(ctx):
     await ctx.send(f"**Pong!** Latency: {round(bot.latency * 1000)}ms")
-
 @bot.event
 async def on_member_join(member):
     welcome = discord.Embed(title="'•.¸♡ helllooo ♡¸.•'", color=0xE6E6FA,
@@ -46,10 +45,28 @@ async def on_member_join(member):
     view = Confirm()
     await bot.get_channel(992752744018493440).send(f" <@&953549791265185832> {member.mention}")
     main_embed = await bot.get_channel(992752744018493440).send(embed=welcome, view=view)
+    view = Confirm()
+    await bot.get_channel(992752744018493440).send(f" <@&953549791265185832> {member.mention}")
+    main_embed = await bot.get_channel(992752744018493440).send(embed=welcome, view=view)
+    Homies = 934391119041687593
+    await member.add_roles(member.guild.get_role(Homies))
+    Level = 934009554134519838
+    await member.add_roles(member.guild.get_role(Level))
+    Continent = 934015398418993193
+    await member.add_roles(member.guild.get_role(Continent))
+    Age = 934017875096764426
+    await member.add_roles(member.guild.get_role(Age))
+    Pronoun = 934018772279382017
+    await member.add_roles(member.guild.get_role(Pronoun))
+    interest = 934019879722434600
+    await member.add_roles(member.guild.get_role(interest))
+    pingr = 953550452979535883
+    await member.add_roles(member.guild.get_role(pingr))
+
     await view.wait()
     if view.value is None:
         return
     else:
         await main_embed.reply(f"{view.value} welcomes {member.mention}")
 
-bot.run(os.environ.get('TOKEN'))
+bot.run('OTY4Mzg0MDM0MDA0NjY4NDU2.GTtgKf.EzIHNBMSMqs5nYMTedBI2vEVj_2k7kIkTJSmck')
