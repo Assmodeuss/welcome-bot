@@ -32,6 +32,9 @@ class Confirm(discord.ui.View):
 
 bot = Bot()
 
+@bot.command()
+async def ping(ctx):
+    await ctx.send("**Pong!** Latency: {round(bot.latency * 1000)}ms")
 
 @bot.event
 async def on_member_join(member):
@@ -49,4 +52,4 @@ async def on_member_join(member):
     else:
         await main_embed.reply(f"{view.value} welcomes {member.mention}")
 
-bot.os.environ.get('TOKEN'))
+bot.os.environ.get('TOKEN')
