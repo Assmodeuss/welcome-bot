@@ -8,7 +8,7 @@ class Bot(commands.Bot):
         intents = discord.Intents.all()
 
 
-        super().__init__(command_prefix=commands.when_mentioned_or('$'), intents=intents)
+        super().__init__(command_prefix=commands.when_mentioned_or('%'), intents=intents)
 
     async def on_ready(self):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
@@ -43,11 +43,8 @@ async def on_member_join(member):
         url="https://media3.giphy.com/media/Ulyubf7eYczLO/giphy.gif?cid=790b761197ac7ec60a21ee41ce9122d24380d159e69aded2&rid=giphy.gif&ct=g")
 
     view = Confirm()
-    await bot.get_channel(992752744018493440).send(f" <@&953549791265185832> {member.mention}")
-    main_embed = await bot.get_channel(992752744018493440).send(embed=welcome, view=view)
-    view = Confirm()
-    await bot.get_channel(992752744018493440).send(f" <@&953549791265185832> {member.mention}")
-    main_embed = await bot.get_channel(992752744018493440).send(embed=welcome, view=view)
+    await bot.get_channel(933980949421621279).send(f" <@&953549791265185832> {member.mention}")
+    main_embed = await bot.get_channel(933980949421621279).send(embed=welcome, view=view)
     Homies = 934391119041687593
     await member.add_roles(member.guild.get_role(Homies))
     Level = 934009554134519838
@@ -62,7 +59,7 @@ async def on_member_join(member):
     await member.add_roles(member.guild.get_role(interest))
     pingr = 953550452979535883
     await member.add_roles(member.guild.get_role(pingr))
-
+    await bot.get_channel(935913776379752448).send(f"<:GreenRight:953568769207332864> __*{member.name}*__ has joined")
     await view.wait()
     if view.value is None:
         return
