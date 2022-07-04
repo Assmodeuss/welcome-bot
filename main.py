@@ -68,7 +68,7 @@ async def on_member_join(member):
 
         
 @bot.event
-async def on_member_remove(member):
+async def on_member_leave(member):
    await bot.get_channel(935913776379752448).send(f"<:RedLeft:953568727188791366> __*{member.name}*__ has left")
 
 bot.run(os.environ.get('TOKEN')) 
