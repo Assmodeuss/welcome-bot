@@ -70,5 +70,36 @@ async def on_member_join(member):
 @bot.event
 async def on_member_remove(member):
    await bot.get_channel(935913776379752448).send(f"<:RedLeft:953568727188791366> __*{member.name}*__ has left")
+class stat(discord.ui.View):
+    def __init__(self):
+        super().__init__()
+        self.value = None
 
+    @discord.ui.button(label="Member Count",emoji=discord.PartialEmoji.from_str("<:Flower_glow:934721253066022962>"),
+                       style=discord.ButtonStyle.green)
+    async def members(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.send_message(f"Current member count :- __***{interaction.guild.member_count}***__", ephemeral=True)
+
+    @discord.ui.button(label="stats",
+                       emoji=discord.PartialEmoji.from_str("<:Flower_glow:934721253066022962>"),
+                       style=discord.ButtonStyle.green)
+    async def stats(self, interaction: discord.Interaction, button: discord.ui.Button):
+        format = "%a, %d %b %Y | %H:%M:%S %ZGMT"
+        stats_embed = discord.Embed(title="Server lastest stats",description=f"Member Count - {interaction.guild.member_count} \n \nRole count - {len(interaction.guild.roles)} \n \n Text Channels - {len(interaction.guild.text_channels)} \n \nserver created - {interaction.guild.created_at.strftime(format)} \n \n Boost count - {str(interaction.guild.premium_subscription_count)}",color=0xE6E6FA)
+        stats_embed.set_thumbnail(url=interaction.guild.icon)
+        await interaction.response.send_message(embed=stats_embed, ephemeral=True)
+
+
+
+
+bot = Bot()
+
+@bot.command()
+async def stonks(ctx):
+    main_embed = discord.Embed(title=" *•.¸♡ Welcome to Ecstasy ♡¸.•* ", description="♡ *• Anime • Social • Dating • Fun* ♡ \n \n  ꘎♡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━♡꘎ \n \n˗ˏˋ ♡ ˎˊ˗ AN anime, Dating, Social, And chill server where you can meet open minded people who share the same interest as you! ˗ˏˋ ♡ ˎˊ˗\n \nೃ⁀➷ Here's what we offer: ೃ⁀➷\n \n ʚɞ Ecstasy is a casual and chill server, the main purpose of the server is for you to have someone to talk and spend time with. You can meet many new people, make new friends and perhaps even find yourself a date or partner.\n  \nʚɞ We have chill staff, and an amazing atmosphere where you'll be able to fit in and meet people just like yourself.\n \n ʚɞ We have many bots to entertain you, for example, mudae, dank-memer, truth & dare and many more!\n \nʚɞ LGBTQ+ supporting and accepting server.\n \nʚɞ Friendly and SFW server\n \nʚɞ We'll make sure you never feel lonely again <3.\n \n˚ ༘♡ ⋆｡˚ 𝒮𝓉𝒾𝓁𝓁 𝓃𝑜𝓉 𝒸𝑜𝓃𝓋𝒾𝓃𝒸𝑒𝒹? Just chat and check for yourself !! ˚ ༘♡ ⋆｡˚",color=0xE6E6FA)
+    main_embed.set_thumbnail(url=ctx.guild.icon)
+
+    view = stat()
+    await ctx.send(embed=main_embed,view=view)
+    return
 bot.run(os.environ.get('TOKEN')) 
