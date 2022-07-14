@@ -102,4 +102,4 @@ async def stonks(ctx):
     view = stat()
     await ctx.send(embed=main_embed,view=view)
     return
-bot.run(os.environ.get('TOKEN')) 
+bot.run(os.environ.get('TOKEN'))  
