@@ -90,10 +90,6 @@ class stat(discord.ui.View):
         await interaction.response.send_message(embed=stats_embed, ephemeral=True)
 
 
-
-
-bot = Bot()
-
 @bot.command()
 async def stonks(ctx):
     main_embed = discord.Embed(title=" *•.¸♡ Welcome to Ecstasy ♡¸.•* ", description="♡ *• Anime • Social • Dating • Fun* ♡ \n \n  ꘎♡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━♡꘎ \n \n˗ˏˋ ♡ ˎˊ˗ AN anime, Dating, Social, And chill server where you can meet open minded people who share the same interest as you! ˗ˏˋ ♡ ˎˊ˗\n \nೃ⁀➷ Here's what we offer: ೃ⁀➷\n \n ʚɞ Ecstasy is a casual and chill server, the main purpose of the server is for you to have someone to talk and spend time with. You can meet many new people, make new friends and perhaps even find yourself a date or partner.\n  \nʚɞ We have chill staff, and an amazing atmosphere where you'll be able to fit in and meet people just like yourself.\n \n ʚɞ We have many bots to entertain you, for example, mudae, dank-memer, truth & dare and many more!\n \nʚɞ LGBTQ+ supporting and accepting server.\n \nʚɞ Friendly and SFW server\n \nʚɞ We'll make sure you never feel lonely again <3.\n \n˚ ༘♡ ⋆｡˚ 𝒮𝓉𝒾𝓁𝓁 𝓃𝑜𝓉 𝒸𝑜𝓃𝓋𝒾𝓃𝒸𝑒𝒹? Just chat and check for yourself !! ˚ ༘♡ ⋆｡˚",color=0xE6E6FA)
