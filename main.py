@@ -85,7 +85,7 @@ class stat(discord.ui.View):
                        style=discord.ButtonStyle.green)
     async def stats(self, interaction: discord.Interaction, button: discord.ui.Button):
         format = "%a, %d %b %Y | %H:%M:%S %ZGMT"
-        stats_embed = discord.Embed(title="Server lastest stats",description=f"Member Count - {interaction.guild.member_count} \n \nRole count - {len(interaction.guild.roles)} \n \n Text Channels - {len(interaction.guild.text_channels)} \n \nserver created - {interaction.guild.created_at.strftime(format)} \n \n Boost count - {str(interaction.guild.premium_subscription_count)}",color=0xE6E6FA)
+        stats_embed = discord.Embed(title="Server lastest stats",description=f"Member Count - {interaction.guild.member_count} \n \nRole count - {len(interaction.guild.roles)} \n \n Text Channels - {len(interaction.guild.text_channels)} \n \nserver created - {interaction.guild.created_at.strftime(format)}  ||  <t:1647442054:R> \n \n Boost count - {str(interaction.guild.premium_subscription_count)}",color=0xE6E6FA)
         stats_embed.set_thumbnail(url=interaction.guild.icon)
         await interaction.response.send_message(embed=stats_embed, ephemeral=True)
 
